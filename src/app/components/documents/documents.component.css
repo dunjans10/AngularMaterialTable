@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.example-margin {
+  margin: 0 2px;
+}
+
+.tabCheck{
+  display: none;
+}

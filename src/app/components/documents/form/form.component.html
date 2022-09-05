@@ -1,0 +1,32 @@
+<div class="container" *ngIf="articles">
+  <h4 class="title"><b>Add New Item</b></h4>
+<form [formGroup]="articleForm" (ngSubmit)="saveItem()">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Article</mat-label>
+    <mat-select formControlName="article">
+      <mat-option *ngFor="let article of articles.results" [value]="article.code">
+        {{article.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="articleForm.controls['article'].hasError('required')">Aricle is required!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Price:</mat-label>
+    <input formControlName="price" matInput type="number" placeholder="Enter price...">
+    <mat-error *ngIf="articleForm.controls['price'].hasError('required')">Price is required!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity:</mat-label>
+    <input formControlName="quantity" matInput type="number" placeholder="Enter quantity...">
+    <mat-error *ngIf="articleForm.controls['quantity'].hasError('required')">Quantity is required!</mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary" class="btn" [disabled]="articleForm.invalid">Save</button>
+  </div>
+
+</form>
+</div>

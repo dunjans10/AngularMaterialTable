@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <p>Transaction Type:{{document.transactionType}}</p>
+    <p>Date Of Creation:{{document.dateOfCreation | date}}</p>
+  </div>
+  <div>
+    <p><u>Business Partner</u></p>
+    <p>{{document.businessPartner.name}}</p>
+    <p>{{document.businessPartner.city}},{{document.businessPartner.address}}</p>
+  </div>
+  <div>
+    <p>Status:{{document.status}}</p>
+    <button mat-raised-button color="primary">Record Document</button>
+  </div>
+</div>
